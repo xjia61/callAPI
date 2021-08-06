@@ -17,6 +17,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
+
+
     public static HashMap<String, Integer>
     sortByValue(HashMap<String, Integer> hm)
     {
@@ -99,6 +101,17 @@ public class Main {
                 }
 
 
+            }
+            limit=2;
+
+            System.out.println("===========================");
+            List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
+            Collections.sort(list, new ValueThenKeyComparator<String, Integer>());
+
+            while(limit>0){
+                System.out.println(list.get(limit).getKey());
+
+                limit--;
             }
 
 
